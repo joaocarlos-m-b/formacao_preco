@@ -26,7 +26,24 @@ fp = FormacaoPreco(
 )
 
 # Chamar o método reversaoValores para obter os dados desejados
-resultado = fp.reversaoValores()
+resultado = {
+    'valor_contabil':round(fp.calc_valor_contabil(),2), 
+    'custo_mercadoria':round(fp.calc_valor_custo(),2),   
+    'custocomercializacao': round(fp.calc_custo_comercializacao(),2),
+    'produto_st':fp.possuiSt,
+    'reversao':fp.reversao_valores()}
 
-# Imprimir o resultado
-print(resultado)
+# Acessando o valor de pLucro dentro do dicionário resultado
+p_lucro = resultado['reversao']['pLucro']
+
+# Imprimir o valor de pLucro
+print(p_lucro)
+
+
+
+'''
+for resultado in resultados:
+    p_lucro = resultado['reversao']['pLucro']
+    print(p_lucro)
+
+'''
